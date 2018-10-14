@@ -4,19 +4,19 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 /**
- * ÓÎÏ·¹ı³Ì
+ * æ¸¸æˆè¿‡ç¨‹
  * @author Diaz
  *
  */
 public class GameProcess
 {
-	private NPC competitors = null;//ÈË»ú¶ÔÏó
-	String npcName = "";//½ÇÉ«Ãû³Æ
-	int playerPoint = 0, npcPoint = 0, rounds = 0;//»ı·Ö¼°»ØºÏÊı
+	private NPC competitors = null;//äººæœºå¯¹è±¡
+	String npcName = "";//è§’è‰²åç§°
+	int playerPoint = 0, npcPoint = 0, rounds = 0;//ç§¯åˆ†åŠå›åˆæ•°
 
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param competitors ÒªÑ¡ÔñµÄ¶ÔÕ½½ÇÉ«
+	 * æ„é€ å‡½æ•°
+	 * @param competitors è¦é€‰æ‹©çš„å¯¹æˆ˜è§’è‰²
 	 */
 	public GameProcess(NPC competitors)
 	{
@@ -28,23 +28,23 @@ public class GameProcess
 			{
 			case LiuXuande:
 			{
-				npcName = "Áõ±¸";
+				npcName = "åˆ˜å¤‡";
 				break;
 			}
 			case CaoXuande:
 			{
-				npcName = "²Ü²Ù";
+				npcName = "æ›¹æ“";
 				break;
 			}
 			case SunZhongmou:
 			{
-				npcName = "ËïÈ¨";
+				npcName = "å­™æƒ";
 				break;
 			}
 			default:
 				break;
 			}
-			System.out.println("ÄãÑ¡ÔñÁË" + npcName);
+			System.out.println("ä½ é€‰æ‹©äº†" + npcName);
 			userOptional(true);
 
 		}
@@ -53,12 +53,12 @@ public class GameProcess
 
 	
 	/**
-	 * ÊÇ·ñ¼ÌĞø
-	 * @param isFirst ÊÇ·ñÊÇµÚÒ»´ÎÓÎÏ·
+	 * æ˜¯å¦ç»§ç»­
+	 * @param isFirst æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡æ¸¸æˆ
 	 */
 	private void userOptional(boolean isFirst)
 	{
-		System.out.println((isFirst ? "Òª¿ªÊ¼Âğ?" : "Òª¿ªÊ¼ÏÂÒ»ÂÖÂğ?") + "(y/n)");
+		System.out.println((isFirst ? "è¦å¼€å§‹å—?" : "è¦å¼€å§‹ä¸‹ä¸€è½®å—?") + "(y/n)");
 		if ("y".equals(new Scanner(System.in).nextLine()))
 		{
 			gaming();
@@ -70,11 +70,11 @@ public class GameProcess
 
 	
 	/**
-	 * ÓÎÏ·¹ı³Ì
+	 * æ¸¸æˆè¿‡ç¨‹
 	 */
 	private void gaming()
 	{
-		System.out.print("Çë³öÈ­(1.¼ôµ¶  2.Ê¯Í· 3¡£²¼):");
+		System.out.print("è¯·å‡ºæ‹³(1.å‰ªåˆ€  2.çŸ³å¤´ 3ã€‚å¸ƒ):");
 		try
 		{
 
@@ -85,23 +85,23 @@ public class GameProcess
 				int r1 = Math.abs(new Random().nextInt());
 				int r2 = Math.abs(new Random().nextInt());
 				int npcOrder = r1 % 10 > 5 ? 1 : r2 % 10 < 5 ? 2 : 3;
-				System.out.println("Äã³öÈ­:" + (playerOrder == 1 ? "¼ôµ¶" : playerOrder == 2 ? "Ê¯Í·" : "²¼"));
-				System.out.println(npcName + "³öÈ­:" + (npcOrder == 1 ? "¼ôµ¶" : npcOrder == 2 ? "Ê¯Í·" : "²¼"));
+				System.out.println("ä½ å‡ºæ‹³:" + (playerOrder == 1 ? "å‰ªåˆ€" : playerOrder == 2 ? "çŸ³å¤´" : "å¸ƒ"));
+				System.out.println(npcName + "å‡ºæ‹³:" + (npcOrder == 1 ? "å‰ªåˆ€" : npcOrder == 2 ? "çŸ³å¤´" : "å¸ƒ"));
 				if (playerOrder == npcOrder)
 				{
 					npcPoint += 1;
 					playerPoint += 1;
-					System.out.println("ºÍ¾ÖÁË");
+					System.out.println("å’Œå±€äº†");
 				} else if ((1 == npcOrder && 2 == playerOrder) || (2 == npcOrder && 3 == playerOrder)
 						|| (3 == npcOrder && 1 == playerOrder))
 				{
-					System.out.println("ÄãÓ®ÁË");
+					System.out.println("ä½ èµ¢äº†");
 					playerPoint += 3;
 				} else if ((2 == npcOrder && 1 == playerOrder) || (3 == npcOrder && 2 == playerOrder)
 						|| (1 == npcOrder && 3 == playerOrder))
 				{
 					npcPoint += 3;
-					System.out.println("ÄãÊäÁË");
+					System.out.println("ä½ è¾“äº†");
 				}
 				rounds += 1;
 				userOptional(false);
@@ -112,19 +112,19 @@ public class GameProcess
 		} catch (InputMismatchException e)
 		{
 			// TODO: handle exception
-			System.out.println("ÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë");
+			System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥");
 			this.gaming();
 		}
 	}
 	/**
-	 * ½áÊøÓÎÏ·
+	 * ç»“æŸæ¸¸æˆ
 	 */
 	private void theEnd()
 	{
-		System.out.println("ÄäÃû VS " + npcName);
-		System.out.println("¶ÔÕ½»ØºÏ:" + rounds);
-		System.out.println("½á¹û:" + npcName + "µÃ·Ö:" + npcPoint + ",ÄãµÃ·Ö:" + playerPoint + "\t"
-				+ (npcPoint >= playerPoint ? "ÇëÏÂ´ÎÅ¬Á¦!" : "¹§Ï²¹§Ï²!"));
+		System.out.println("åŒ¿å VS " + npcName);
+		System.out.println("å¯¹æˆ˜å›åˆ:" + rounds);
+		System.out.println("ç»“æœ:" + npcName + "å¾—åˆ†:" + npcPoint + ",ä½ å¾—åˆ†:" + playerPoint + "\t"
+				+ (npcPoint >= playerPoint ? "è¯·ä¸‹æ¬¡åŠªåŠ›!" : "æ­å–œæ­å–œ!"));
 		return;
 	}
 }

@@ -1,6 +1,6 @@
 package edu.diaz.rockpapersicssors;
 /**
- * 对战角色
+ * 瀵规垬瑙掕壊
  * @author Diaz
  *
  */

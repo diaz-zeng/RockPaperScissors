@@ -2,7 +2,7 @@ package edu.diaz.rockpapersicssors;
 
 import java.util.Scanner;
 /**
- * ³ÌĞòÖ÷Èë¿Ú
+ * ç¨‹åºä¸»å…¥å£
  * @author Diaz
  *
  */
@@ -13,11 +13,11 @@ public class Main
 	{
 		// TODO Auto-generated method stub
 		System.out.println("******************");
-		System.out.println("**²ÂÈ­£¬¿ªÊ¼**");
+		System.out.println("**çŒœæ‹³ï¼Œå¼€å§‹**");
 		System.out.println("******************");
 		System.out.println();
-		System.out.println("³öÈ­¹æÔò£º1.¼ôµ¶  2.Ê¯Í· 3¡£²¼");
-		System.out.print("ÇëÑ¡Ôñ¶Ô·½½ÇÉ«(1.Áõ±¸ 2.²Ü²Ù 3.ËïÈ¨):");
+		System.out.println("å‡ºæ‹³è§„åˆ™ï¼š1.å‰ªåˆ€  2.çŸ³å¤´ 3ã€‚å¸ƒ");
+		System.out.print("è¯·é€‰æ‹©å¯¹æ–¹è§’è‰²(1.åˆ˜å¤‡ 2.æ›¹æ“ 3.å­™æƒ):");
 		NPC npc = null;
 		switch (new Scanner(System.in).nextInt())
 		{
@@ -38,7 +38,7 @@ public class Main
 			break;
 		}
 		default:
-			System.out.println("ÊäÈëÓĞÎó");
+			System.out.println("è¾“å…¥æœ‰è¯¯");
 			return;
 		}
 		GameProcess gameProcess = new GameProcess(npc);
